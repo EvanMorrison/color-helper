@@ -16,7 +16,8 @@ import { colorHelper } from 'color-helper'
 const header = colorHelper('#3768af');
 const headerText = header.text().hex();
 const darkHeader = header.darken(0.3).hex();
-// note calling .hex() outputs the darkened color value but resets the internal color to the original, so when desaturate is called on the next line it is operating on the original input color
+// note calling .hex() outputs the darkened color value but resets the internal color to the original,
+// so when desaturate is called on the next line it is operating on the original input color
 const headerAlt = header.desaturate(0.1).rgba(0.5);
 ```
 

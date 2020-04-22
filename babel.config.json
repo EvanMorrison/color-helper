@@ -5,16 +5,19 @@
       {
         "targets": {
           "browsers": [
-            "defaults",
-            "not ie < 11",
-            "not safari < 9",
-            "not android < 5"
+            "last 1 year"
           ]
         },
         "useBuiltIns": "usage",
         "bugfixes": true,
         "corejs": 3
       }
+    ],
+    [
+      "minify",
+    {
+      "builtIns": false
+    }
     ]
   ],
   "comments": false

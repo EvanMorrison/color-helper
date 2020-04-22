@@ -12,12 +12,6 @@
         "bugfixes": true,
         "corejs": 3
       }
-    ],
-    [
-      "minify",
-    {
-      "builtIns": false
-    }
     ]
   ],
   "comments": false

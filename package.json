@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "utility for adjusting color values",
   "main": "dist/index.js",
-  "type": "index.d.ts",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/EvanMorrison/color-helper.git"

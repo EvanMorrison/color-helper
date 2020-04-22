@@ -18,7 +18,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function colorHelper(hexColor) {
   let originalColor, currentColor;
-  setHex(hexColor);
   const colorUtils = {
     light,
     dark,
@@ -39,6 +38,7 @@ function colorHelper(hexColor) {
     setHex,
     setRgb
   };
+  setHex(hexColor);
 
   function setHex(hexColor = '#000000') {
     originalColor = rgbArray(hexColor);

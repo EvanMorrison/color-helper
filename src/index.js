@@ -6,7 +6,6 @@ import { clamp } from 'lodash';
  */
 export function colorHelper(hexColor) {
   let originalColor, currentColor;
-  setHex(hexColor);
 
   const colorUtils = {
     light,
@@ -28,6 +27,8 @@ export function colorHelper(hexColor) {
     setHex,
     setRgb,
   };
+
+  setHex(hexColor);
 
   function setHex(hexColor = '#000000') {
     originalColor = rgbArray(hexColor);

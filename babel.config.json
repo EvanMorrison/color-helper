@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "defaults",
+            "not ie < 11",
+            "not safari < 9",
+            "not android < 5"
+          ]
+        },
+        "useBuiltIns": "usage",
+        "bugfixes": true,
+        "corejs": 3
+      }
+    ]
+  ],
+  "comments": false
+}

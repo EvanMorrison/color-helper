@@ -1,0 +1,11 @@
+.DS_Store
+.git
+.gitignore
+README.md
+dist
+dump.rdb
+babel.config.js
+node_modules
+package.json
+public
+scripts

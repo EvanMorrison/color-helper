@@ -5,19 +5,13 @@
       {
         "targets": {
           "browsers": [
-            "last 1 year"
+            "last 2 years"
           ]
         },
-        "useBuiltIns": "usage",
+        "useBuiltIns": "entry",
         "bugfixes": true,
         "corejs": 3
       }
-    ],
-    [
-      "minify",
-    {
-      "builtIns": false
-    }
     ]
   ],
   "comments": false

@@ -1,6 +1,3 @@
-import hexRgb from 'hex-rgb';
-import { clamp } from 'lodash';
-
 /**
  * @param {string} hexColor - original hex value color #XXXXXX
  */
@@ -163,8 +160,21 @@ export function offColor(hexColor) {
   return colorUtils;
 }
 
-function rgbArray(color) {
-  return hexRgb(color);
+function rgbArray(hex) {
+  // The body of this function is copied from 'hex-rgb' v1.0.0
+  if (typeof hex !== 'string') {
+    throw new TypeError('Expected a string');
+  }
+
+  hex = hex.replace(/^#/, '');
+
+  if (hex.length === 3) {
+    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+  }
+
+  var num = parseInt(hex, 16);
+
+  return [num >> 16, (num >> 8) & 255, num & 255];
 }
 
 export { rgbArray as hexRgb };
@@ -248,4 +258,11 @@ export function rgbToHsl(rgb) {
   }
 
   return [h, s, l];
+}
+
+// based on lodash clamp
+function clamp(number, lower, upper) {
+  number = number <= upper ? number : upper;
+  number = number >= lower ? number : lower;
+  return number;
 }

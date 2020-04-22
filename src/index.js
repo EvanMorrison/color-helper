@@ -4,7 +4,7 @@ import { clamp } from 'lodash';
 /**
  * @param {string} hexColor - original hex value color #XXXXXX
  */
-export function colorHelper(hexColor) {
+export function offColor(hexColor) {
   let originalColor, currentColor;
 
   const colorUtils = {

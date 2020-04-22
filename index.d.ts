@@ -1,30 +1,30 @@
-declare module "color-helper" {
+declare module "off-color" {
 
-    export interface colorHelper {
+    export interface offColor {
         light: () => boolean;
         dark: () => boolean;
-        lighten: (ratio?: number) => colorHelper;
-        darken: (ratio?: number) => colorHelper;
-        saturate: (ratio?: number) => colorHelper;
-        desaturate: (ratio?: number) => colorHelper;
-        increaseContrast: (ratio?: number) => colorHelper;
-        decreaseContrast: (ratio?: number) => colorHelper;
-        active: () => colorHelper;
-        highlight: () => colorHelper;
-        selected: () => colorHelper;
-        text: () => colorHelper;
-        shadow: () => colorHelper;
+        lighten: (ratio?: number) => offColor;
+        darken: (ratio?: number) => offColor;
+        saturate: (ratio?: number) => offColor;
+        desaturate: (ratio?: number) => offColor;
+        increaseContrast: (ratio?: number) => offColor;
+        decreaseContrast: (ratio?: number) => offColor;
+        active: () => offColor;
+        highlight: () => offColor;
+        selected: () => offColor;
+        text: () => offColor;
+        shadow: () => offColor;
         hex: () => string;
         rgb: () => string;
         rgba: (alpha?: number) => string;
-        setHex: (hexColor?: string) => colorHelper;
-        setRgb: (rgbArray?: number[]) => colorHelper;
+        setHex: (hexColor?: string) => offColor;
+        setRgb: (rgbArray?: number[]) => offColor;
     }
 
     /**
      * @param {string} hexColor - original hex value color #XXXXXX
      */
-    export function colorHelper(hexColor: string): colorHelper
+    export function offColor(hexColor: string): offColor
     export function hslToRgb(hsl: number[]): number[];
     export function rgbToHsl(rgb: number[]): number[];
     export { rgbArray as hexRgb };

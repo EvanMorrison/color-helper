@@ -1,19 +1,19 @@
-# Color-Helper 
+# Off-Color 
 ##  Color utility functions
 
 To use as a dependency in your project:
 ```
-npm i color-helper
+npm i off-color
 ```
 
 To use in a component, modules, styled component, etc.
 
 ```
-import { colorHelper } from 'color-helper'
+import { offColor } from 'off-color'
 
 ...
 
-const header = colorHelper('#3768af');
+const header = offColor('#3768af');
 const headerText = header.text().hex();
 const darkHeader = header.darken(0.3).hex();
 // note calling .hex() outputs the darkened color value but resets the internal color to the original,
@@ -24,10 +24,10 @@ const headerAlt = header.desaturate(0.1).rgba(0.5);
 Use it directly in styled components
 ```
 ...
-background: ${props => colorHelper(props.theme.primary).rgba(0.5)};
+background: ${props => offColor(props.theme.primary).rgba(0.5)};
 ```
 
-colorHelper takes a hex value string and returns an object with a collection of chainable functions that can manipulate the initial input color, and output the value in a hex, rgb, or rgba string value.
+offColor takes a hex value string and returns an object with a collection of chainable functions that can manipulate the initial input color, and output the value in a hex, rgb, or rgba string value.
 
 Available functions include:
 * `light()` / `dark()` - return boolean if the current internal color is light or dark

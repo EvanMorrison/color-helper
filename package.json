@@ -1,19 +1,22 @@
 {
-  "name": "color-helper",
+  "name": "off-color",
   "version": "1.0.0",
   "description": "utility for adjusting color values",
   "main": "dist/index.js",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EvanMorrison/color-helper.git"
+    "url": "https://github.com/EvanMorrison/off-color.git"
   },
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "babel src/index.js -o dist/index.js"
   },
   "keywords": [
-    "color"
+    "color",
+    "shift",
+    "change",
+    "css"
   ],
   "author": "Evan Morrison",
   "license": "MIT",

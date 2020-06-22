@@ -1,7 +1,9 @@
 /**
  * @param {string} hexColor - original hex value color #XXXXXX
  */
-export function offColor(hexColor) {
+export const offColor = color;
+
+export function color(hexColor) {
   let originalColor, currentColor;
 
   const colorUtils = {
@@ -78,15 +80,23 @@ export function offColor(hexColor) {
 
   /**
    * functions that return a boolean value
+   * and reset the currentColor to originalColor
    */
 
   function dark() {
     const [r, g, b] = currentColor;
+    currentColor = originalColor;
     return (r * 299 + g * 587 + b * 114) / 1000 < 128;
   }
 
   function light() {
     return !dark();
+  }
+
+  // version of light for internal use that doesn't reset the color
+  function _light() {
+    const [r, g, b] = currentColor;
+    return (r * 299 + g * 587 + b * 114) / 1000 >= 128;
   }
 
   /**
@@ -118,12 +128,12 @@ export function offColor(hexColor) {
   }
 
   function text() {
-    currentColor = light() ? rgbArray('#333333') : rgbArray('#FFFFFF');
+    currentColor = _light() ? rgbArray('#333333') : rgbArray('#FFFFFF');
     return colorUtils;
   }
 
   function shadow() {
-    currentColor = light() ? rgbArray('#000000') : rgbArray('#FFFFFF');
+    currentColor = _light() ? rgbArray('#000000') : rgbArray('#FFFFFF');
     return colorUtils;
   }
 
@@ -133,7 +143,7 @@ export function offColor(hexColor) {
    */
 
   function decreaseContrast(ratio = 0) {
-    if (light()) {
+    if (_light()) {
       return darken(ratio);
     } else {
       return lighten(ratio);

@@ -47,6 +47,7 @@ const umdBuild = {
   output: {
     ...baseConfig.output,
     path: join(__dirname, 'umd'),
+    library: 'offColor',
     libraryTarget: 'umd',
   },
 };

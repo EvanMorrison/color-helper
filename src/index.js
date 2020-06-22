@@ -1,9 +1,7 @@
 /**
  * @param {string} hexColor - original hex value color #XXXXXX
  */
-export const offColor = color;
-
-export function color(hexColor) {
+export function offColor(hexColor) {
   let originalColor, currentColor;
 
   const colorUtils = {
@@ -231,6 +229,9 @@ export function hslToRgb(hsl) {
 
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 }
+
+// exporting offColor with alias color
+export const color = offColor;
 
 /**
  * The return value of this function is an array of [hue, saturation, luminocity]

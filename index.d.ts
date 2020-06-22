@@ -43,8 +43,8 @@ declare module "off-color" {
      * A useful set of chainable functions for adjusting shades of color and getting values back in hex, rgb, or rgba format.
      * @param {string} hexColor - original hex value color #XXXXXX
      */
-    export { color as offColor };
-    export function color(hexColor: string): offColor;
+    export { offColor as color };
+    export function offColor(hexColor: string): offColor;
     export function hslToRgb(hsl: number[]): number[];
     export function rgbToHsl(rgb: number[]): number[];
     export { rgbArray as hexRgb };
